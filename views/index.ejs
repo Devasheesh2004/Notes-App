@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello</title>
+    <link href="/css/output.css" rel="stylesheet">
+</head>
+<body>
+    <div class="main font-mono min-h-screen bg-zinc-900">
+        <div class="block w-full rounded-md px-5 py-5 text-center text-5xl resize-none text-white">Notes App</div>
+        <div class="form w-full px-10 py-10">
+            <form action="/create" method="post">
+                <input class="block w-full rounded-md px-5 py-2 bg-zinc-800 text-white" type="text" placeholder="Title Goes Here " name="title">
+                <textarea class="block w-full rounded-md mt-2 px-5 py-2 bg-zinc-800 resize-none text-white" name="details" placeholder="Write your task details here"></textarea>
+                <input class="block font-bold hover:cursor-pointer bg-blue-400 rounded-md px-5 py-2 mt-2 text-white" type="submit" value="Create/Edit Note"/>
+            </form>
+        </div>
+        <div class="tasks px-10 flex flex-wrap gap-5">
+            <% if(files.length > 0){ %>
+                <% files.forEach(val => { %>
+                    <div class="task rounded-md flex flex-col gap-4  px-3 py-4 bg-zinc-800">
+                        <h1 class="text-white text-3xl tracking-tighter"><%= val.split(".txt")[0]%></h1>
+                        <div class="flex gap-10">
+                            <a class="text-blue-500 hover:cursor-pointer hover:text-yellow-400 inline-block" href="/file/<%=val%>">Read More</a>
+                            <a class="text-red-300 hover:cursor-pointer hover:text-red-600 inline-block" href="/edit/<%=val%>">Edit</a>
+                        </div>
+                    </div>
+                <% }) %>
+            <% } else { %>
+                <h2 class="text-white">No Note Added.</h2>
+            <% } %>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello</title>
+    <link href="/css/output.css" rel="stylesheet">
+</head>
+<body>
+    <div class="main font-mono min-h-screen bg-zinc-900">
+        <div class="block w-full rounded-md px-5 py-5 text-center text-5xl resize-none text-white">Notes App</div>
+        <div class="content w-full px-10 py-10">
+            <a href="/">
+                <button class="text-2xl text-blue-400 hover:cursor-pointer">HOME</button>
+            </a>
+            <h1 class="text-3xl mt-5 rounded-md text-white">Title : <%=filename.split(".txt")[0]%></h1>
+            <p class="block w-full text-sm rounded-md mt-10 px-3 py-2 bg-zinc-800 resize-none text-white"><%=filedata%></p>
+            <form action="/delete" method="post">
+                <input type="hidden" name="filename" value="<%=filename%>">
+                <input class="text-white bg-yellow-400 rounded-md w-20 mt-10 hover:cursor-pointer border-3 border-transparent hover:border-amber-100 box-border" type="submit" value="DELETE">
+            </form>
+        </div>
+    </div>
+</body>
+</html>
