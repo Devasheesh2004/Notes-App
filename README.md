@@ -22,6 +22,7 @@ Follow these steps to run the project locally on your machine:
 ```bash
 git clone https://github.com/Devasheesh2004/Notes-App.git
 cd notes-app
+Create a tasks folder
 ```
 
 ### 📥 Step 2: Install Dependencies
