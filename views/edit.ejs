@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello</title>
+    <link href="/css/output.css" rel="stylesheet">
+
+</head>
+<body>
+    <div class="main font-mono min-h-screen bg-zinc-900 text-white p-10 w-full">
+        <div class="block w-full rounded-md px-5 py-5 text-center text-5xl resize-none text-white">Notes App</div>
+        <a href="/" class="text-blue-400 inline-block mb-10 text-2xl">HOME</a>
+        <form action="/editname" method="post">
+                <input class="block rounded-md px-5 py-2 bg-zinc-800 text-white" type="text" placeholder="Previous Name" name="prevname" value="<%=filename%>">
+                <input class="block mt-5 rounded-md px-5 py-2 bg-zinc-800 text-white" type="text" placeholder="New Name" name="newname">
+                <input class="block font-bold hover:cursor-pointer bg-yellow-400 rounded-md px-5 py-2 mt-5 text-white" type="submit" value="Update Name"/>
+        </form>
+    </div>
+</body>
+</html>
